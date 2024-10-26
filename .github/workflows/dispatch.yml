@@ -38,6 +38,6 @@ jobs:
             - name: Install Requirements
               run: pip install -r requirements.txt
             - name: Generate Report
-              run: run-report.py
+              run: python run-report.py
             
             
