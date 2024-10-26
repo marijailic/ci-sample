@@ -1,0 +1,20 @@
+name: Workflow dispatch
+
+on:
+    workflow_dispatch:
+
+jobs:
+    run:
+        name: Hello World
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hello World
+              run: echo "Hello World"
+            - name: Environment Variables
+              env:
+                  CURRENT_DATE: 2024-10-26
+              run: echo "$CURRENT_DATE --date"
+            - name: Dump GitHub context
+              env:
+                  GITHUB_CONTEXT: ${{ toJson(github) }}
+              run: echo "$GITHUB_CONTEXT"
